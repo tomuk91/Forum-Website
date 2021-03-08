@@ -1,14 +1,57 @@
+/* Resets */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul, ol, li, a {
+ list-style: none;
+ list-style-type: none;
+}
+
+.content_login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+}
+
+.content_login > .form {
+  display: flex;
+}
+
 /* Navigation */
 
 .nav {
     display: flex;
     justify-content: center;
     background-color: whitesmoke;
+    min-width: 90%;
+    height: 94px;
     
 }
 
 .nav > ul {
-    display: flex;
+  display: flex;
+
 }
 
 .nav > ul > li {
@@ -26,31 +69,234 @@
     border-radius: 10px;
 }
 
+/*Forum Nav */
+
+.forum_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20%;
+  background-color: #daf1f1;
+  width: 60%;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.forum_nav > ul {
+  display: flex;
+}
+
+.forum_nav > ul > li {
+  margin: 0px 10px 0px 10px;
+  font-weight: 700;
+  list-style-type: none;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.forum_nav > ul > li > a {
+  all: inherit;
+}
+
+.forum_nav > ul > li:hover {
+  cursor: pointer;
+  background: aqua;
+  border-radius: 10px;
+}
+
+
+
+
 /*Footer */
 
 footer {
-    display: flex;
-    justify-content: center;
-    background-color: grey;
+    display: block;
+    width: 100%;
+    height: 94px;
+    text-align: center;
+    background-color: whitesmoke;
 }
 
 
 /* Content Main */
+
 
 .banner {
     background-image: url('../images/background1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 800px;
-    width: 100%
+    width: 100%;
 }
 
 .banner_text {
+    display: block;
     text-align: center;
-    padding-top: 20%;
-    font-size: 60px;
+    padding-top: 8%;
+    font-size: 40px;
     font-family: 'Courier New', Courier, monospace;
     color:whitesmoke;
     font-weight: 800;
 
 }
+
+.banner a {
+  color: yellow;
+  text-decoration: none;
+}
+
+.banner a:hover {
+  color: aqua;
+  
+}
+
+/* Registration Form */
+
+div.form {
+    display: block;
+    position: relative;
+    padding: 10px;   
+   
+} form {
+    font-family: 'Courier New', Courier, monospace;
+    background-color:rgba(232, 232, 232, 1);
+    box-shadow: honeydew;
+    border-radius: 20px;
+    border: double black;
+    text-align: center;
+    display: block;
+    align-content: center;
+    padding: 10px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+form > dd {
+  text-align: center;
+}
+
+.form p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.errors {
+    display: block;
+    text-align: center;
+    border: 2px solid red;
+    color: red;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .errors ul {
+    margin-bottom: 0;
+    padding-left: 1em;
+    list-style-type: square;
+  }
+
+  .register {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  input[type=text], [type=password], [type=readonly]  {
+    padding:10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    width: 30%;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
+
+  input[type=text]:focus {
+    background-color: #add8e6;
+    border-color: #000;
+  }
+
+  input[type=submit] {
+
+    /* remove default behavior */
+    appearance:none;
+    -webkit-appearance:none;
+  
+    /* usual styles */
+    padding:10px;
+    border:none;
+    background-color:#0999ac;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+    width:30%;
+  
+  }
+
+  /* Table */ 
+
+  th {
+    background-color: rgba(29,150,178,1);
+    border: 1px solid rgba(29,150,178,1);
+    font-weight: normal;
+    text-align: center;
+    color: white;
+
+  }
+
+  td { 
+    background-color: rgba(232, 232, 232, 1); ;
+  }
+
+  td > p {
+    padding-top: 20px;
+    font-size: 15px;
+  }
+
+  tr > h1 {
+    color: red;
+  }
+
+ 
+  table {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+table,
+tr,
+th,
+td {
+  padding: 0;
+  text-align: center;
+  white-space: normal;
+}
+
+th,
+td {
+  padding: .5em;
+  vertical-align: middle;
+}
+
+.forum > table {
+
+  font-size: 23px;
+  min-width: 90%;
+  padding: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* Delete Page */
+
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+
+}
+  
+
+

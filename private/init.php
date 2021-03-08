@@ -16,7 +16,9 @@ session_start(); // Sessions turned on
 
   require('functions.php');
   require('database.php');
+  require('db_queries.php');
   
-$db = db_connect();
+  $db = db_connect();
+  $errors = [];
 
   ?>

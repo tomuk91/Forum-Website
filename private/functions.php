@@ -7,13 +7,32 @@ function url_to($path) {
     return WWW_ROOT . $path;
 }
 
-function hchar($string) {
-    return htmlspecialchars . $string;
+function display_errors($errors) {
+
+    $output = '';
+    if(!empty($errors)) {
+
+    $output .= "<div class=\"errors\">";
+    $output .= "<h4>Please fix the following errors:</h4>";
+    $output .= "<ul>";
+    foreach ( $errors as $error) {
+        $output .= "<li>" . $error . "</li>" . "</br>";
+    }   
+        $output .= "</ul>";
+        $output .= "</div>";
+    
+}
+    return $output;
 }
 
-function if_post_request() {
-    $_SERVER['REQUEST_METHOD'] == 'POST';
+function needs_login_to_access() {
+    if(!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    } else {
+        //do nothing
+    }
 }
+
 
 
 ?>
