@@ -20,10 +20,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="items">
         <h3>Are you sure you want to delete your user account?</h3>
     </div>
-
+    <!-- delete profile - id grabbed from the session set when logged in -->
     <form action="<?php echo url_to('/delete.php?id=' . htmlspecialchars(urlencode(($_SESSION['user_id'])))); ?>" method="post">
-        <p style="text-align: left;"><a href="<?php echo url_to('/profile.php');?>">Back to profile</a></p>
+    
+        <p style="text-align: left;"><a href="<?php echo url_to('/profile.php');?>">Back to profile</a></p><br>
+
         <p>User to be deleted: <?php echo htmlspecialchars($_SESSION['username']); ?> </p><br>
+
         <input type="submit" name="commit" value="Delete user" />
     </form>
 </div>

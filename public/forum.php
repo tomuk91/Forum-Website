@@ -18,9 +18,9 @@ $category = select_all_categories();
     
         <?php while($cat = mysqli_fetch_assoc($category)) { ?>
             <tr>
-                <td width="70%"><a href="<?php echo url_to('/show_topics.php?id=' . htmlspecialchars(urlencode($cat['id']))); ?>"><?php echo $cat['cat_name']; ?></a></td>
+                <td width="30%"><a href="<?php echo url_to('/show_topics.php?id=' . htmlspecialchars(urlencode($cat['id']))); ?>"><?php echo $cat['cat_name']; ?></a></td>
                 <td><?php echo $cat['cat_descriptions']?></td>
-                <td></td>
+                <td width="10%;"></td>
             </tr>
         <?php } ?>
     </table>

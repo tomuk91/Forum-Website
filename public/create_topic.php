@@ -13,6 +13,7 @@ $cat = find_cat_by_id($id);
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
     $topics['topic_subject'] = $_POST['topic'] ?? "";
     $topics['topic_date'] = date('Y-m-d H:i:s');
     $topics['topic_cat'] = $cat['id'] ?? ""; 

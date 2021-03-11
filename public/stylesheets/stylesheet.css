@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-/* Remove default margin */
+/* Remove defaults */
 body,
 h1,
 h2,
@@ -21,9 +21,25 @@ dd {
   margin: 0;
 }
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+
 ul, ol, li, a {
  list-style: none;
  list-style-type: none;
+}
+
+.align-centre {
+  text-align: center;
+  font-size: 30px;
 }
 
 .content_login {
@@ -117,7 +133,7 @@ footer {
 }
 
 
-/* Content Main */
+/* Banner */
 
 
 .banner {
@@ -179,6 +195,8 @@ form > dd {
     text-align: center;
 }
 
+/* Errors */
+
 .errors {
     display: block;
     text-align: center;
@@ -194,6 +212,8 @@ form > dd {
     list-style-type: square;
   }
 
+  /* Forms */ 
+  
   .register {
     display: block;
     margin-left: auto;
@@ -247,6 +267,7 @@ form > dd {
     background-color: rgba(232, 232, 232, 1); ;
   }
 
+
   td > p {
     padding-top: 20px;
     font-size: 15px;
@@ -295,8 +316,108 @@ td {
   align-items: center;
   padding: 15px;
 
-
 }
   
 
+/* Front Page Tiles */
 
+img {
+  max-width: 100%;
+}
+
+.tile_container {
+  display: flex;
+  min-width: 90%;
+  height: 900px;
+}
+
+
+.tiles img {
+  height: 300px;
+  border: white solid 5px;
+}
+
+.tiles p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.tiles h2 {
+  font-size: 40px;
+  padding: 10px;
+}
+
+.tiles {
+  height: 700px;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 20px;
+  margin: 35px;
+}
+
+.tile-1 {
+  border: black solid 5px;
+  text-align: center;
+  background-color: rgba(243, 241, 239, 1);
+  padding: 20px;
+}
+
+.tile-2 {
+  border: black solid 5px;
+  text-align: center;
+  background-color: rgba(228, 233, 237, 1);
+  padding: 20px;
+
+}
+
+.tile-3 { 
+  border: black solid 5px;
+  text-align: center;
+  background-color: rgba(191, 191, 191, 1);
+  padding: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+  .tiles img {
+    display: none;
+  }
+
+  .tiles {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-width: 90%;
+    padding: 20px;
+  }
+
+  .banner_text {
+    display: block;
+    text-align: center;
+    padding-top: 8%;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color:whitesmoke;
+    font-weight: 800;
+
+}
+
+.banner {
+  background-image: url('../images/background1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 350px;
+  width: 100%;
+}
+
+.forum_nav {
+  align-items: center;
+  min-width: 90%;
+  height: auto;
+}
+}

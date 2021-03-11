@@ -17,7 +17,7 @@ $topics_set = find_topic_by_cat_id($id);
         <th>Topic</th>
         <th>Date Created</th>
         <th>Created by</th>
-
+        
         <?php while($topic = mysqli_fetch_assoc($topics_set)) { ?>
         <tr>
             <td width="70%"><a href="<?php echo url_to('/show_posts.php?id=' . $id) ?>"><?php echo htmlspecialchars($topic['topic_subject']); ?></a></td>

@@ -33,6 +33,15 @@ function needs_login_to_access() {
     }
 }
 
+function check_for_session_msg() {
+
+    if(isset($_SESSION['msg']) && $_SESSION['msg'] != '') {
+    
+    echo "<h3>" . $_SESSION['msg'] .  "</h3>";
+    unset($_SESSION['msg']);
+    }
+}   
+
 
 
 ?>

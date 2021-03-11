@@ -242,9 +242,36 @@ function find_cat_by_id($id) {
     return $cat;
 }
 
+function find_topic_by_id($id) {
+    global $db;
+
+    $sql = "SELECT * FROM topics ";
+    $sql .= "WHERE id='" . mysqli_real_escape_string($db, $id) . "'";
+    $result = mysqli_query($db, $sql);
+    if($result){
+        $cat = mysqli_fetch_assoc($result);
+    } else {
+        echo mysqli_error($db);
+    }
+    mysqli_free_result($result);
+    return $cat;
+}
+
+/*TO BE WORKED ON
 function count_topics() {
+
+    global $db;
+
+    $sql = "SELECT categories.id, topics.topic_cat ";
+    $sql .= "FROM topics ";
+    $sql .= "JOIN categories ON ";
+    $sql .= "topics.topic_cat=categories.id" 
+    $sql .= "WHERE topic_cat='" . categories.id . "'";
+    $result = mysqli_query($db, $sql);
+    return $result;
     // count topics to display on front forum
 }
+*/
 
 
 function create_topic($topics) {
@@ -302,20 +329,62 @@ function find_topic_by_cat_id($cat_id) {
     return $result;
 }
 
+   
 
-function find_post_by_topic_id($topic_id) {
+function show_posts_information($topic_id) {
     global $db;
 
-    $sql = "SELECT * FROM posts ";
-    $sql .= "JOIN users ON ";
+    $sql = "SELECT posts.id, users.username, users.reg_date, posts.post_content, posts.post_date, posts.post_topic, posts.post_by "; 
+    $sql .= "FROM posts ";
+    $sql .= "INNER JOIN users ON ";
     $sql .= "posts.post_by=users.id ";
-    $sql .= "JOIN topics ON ";
+    $sql .= "INNER JOIN topics ON ";
     $sql .= "posts.post_topic=topics.id ";
     $sql .= "WHERE post_topic='" . mysqli_real_escape_string($db, $topic_id) . "' ";
     $sql .= "ORDER BY post_date ASC";
     $result = mysqli_query($db, $sql);
     return $result;
 }        
+
+function find_all_posts() {
+    global $db;
+
+    $sql = "SELECT * FROM posts ";
+    $result = mysqli_query($db, $sql);
+    return $result;
+}
+
+function find_post_by_id($id) {
+    global $db;
+
+    $sql = "SELECT * FROM posts ";
+    $sql .= "WHERE id='" . mysqli_real_escape_string($db, $id) . "'";
+    $sql .= "LIMIT 1";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $post = mysqli_fetch_assoc($result);
+    } else {
+        echo mysqli_error($db);
+        exit;
+    }
+    return $post;
+}
+
+function delete_post($id) {
+    global $db;
+
+    $sql = "DELETE FROM posts ";
+    $sql .= "WHERE id='" . mysqli_real_escape_string($db, $id) . "' ";
+    $sql .= "LIMIT 1";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        return true;
+    } else {
+        echo mysqli_error($db);
+        db_disconnect($db);
+        exit;
+    }
+}
 
 
 ?>

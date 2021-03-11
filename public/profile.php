@@ -2,9 +2,7 @@
 
 <?php
 
-if(!isset($_SESSION['user_id'])) {
-    header('Location: register.php');
-}
+needs_login_to_access();
 
 $user = profile_by_sessionid();
 
@@ -26,6 +24,7 @@ $user = profile_by_sessionid();
     <td><?php echo htmlspecialchars($profile['last_name']); ?></td>
     <td><?php echo htmlspecialchars($profile['username']); ?></td>
     <td><?php echo htmlspecialchars($profile['email']); ?></td>
+    <!-- Not getting encrypted/hashed password from database, placeholder instead for security-->
     <td><?php echo "<p>******</p>"; ?></td>
 </tr>
 <tr>
